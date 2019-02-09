@@ -73,8 +73,68 @@
           <h2>Salary Prediction Tool</h2>
           <!--<p class="lead mb-5">This theme features a flexible, UX friendly sidebar menu and stock photos from our friends at
             <a href="https://unsplash.com/">Unsplash</a>!</p>-->
-            <p class="lead mb-5">Job Title</p>
-          <a class="btn btn-dark btn-xl js-scroll-trigger" href="#services">Show me the money!</a> <!-- CHANGE THIS TO FUNCTION CALL ON SALARY PREDICTION -->
+            <p class="lead mb-5">Select Job Title, Location, and Company</p>
+
+            <div class="row">
+            <div class="col-lg-4 col-md-6 mb-5 mb-lg-0 form-group">
+                <div class="dropdown">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" id="dropMenu1" aria-haspopup="true" aria-expanded="true">
+                        Company<span class="caret"></span>
+                        </button>
+                    <div class="dropdown-menu" aria-labelledby="dropMenu1">
+                        {%  for company in companies %}
+                        <li><a class="dropdown-item">{{ company }}</a></li>
+                        {%  endfor %}
+                    <!--
+                        <a class="dropdown-item" href="#">Google</a>
+                        <a class="dropdown-item" href="#">Amazon</a>
+                        <a class="dropdown-item" href="#">Netflix</a> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-5 mb-lg-0 form-group">
+                <div class="dropdown">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" id="dropMenu2" aria-haspopup="true" aria-expanded="true">
+                        Location<span class="caret"></span>
+                        </button>
+                    <div class="dropdown-menu" aria-labelledby="dropMenu2">
+                        {%  for location in locations %}
+                        <li><a class="dropdown-item">{{ location }}</a></li>
+                        {% endfor %}
+                        <!--
+                        <a class="dropdown-item" href="#">New York City</a>
+                        <a class="dropdown-item" href="#">San Francisco</a>
+                        <a class="dropdown-item" href="#">Washington, D.C.</a> -->
+                    </div>
+                </div>
+            </div>
+
+                <div class="col-lg-4 col-md-6 mb-5 mb-lg-0 form-group">
+                <div class="dropdown">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" id="dropMenu3" aria-haspopup="true" aria-expanded="true">
+                        Job Title<span class="caret"></span>
+                        </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropMenu3">
+                        {%  for title in job_titles %}
+                        <li><a class="dropdown-item">{{ title }}</a></li>
+                        {% endfor %}
+                        <!--
+                        <a class="dropdown-item" href="#">Software Engineer</a>
+                        <a class="dropdown-item" href="#">Data Scientist</a>
+                        <a class="dropdown-item" href="#">Product Manager</a> -->
+                    </ul>
+                </div>
+            </div>
+
+            </div>
+            <p class="lead mb-5"></p>
+            <div class="container">
+                <form id="input" action="/" method="post">
+                    <!--<a class="btn btn-dark btn-xl js-scroll-trigger" href="#services">Show me the money!</a> --> <!-- CHANGE THIS TO FUNCTION CALL ON SALARY PREDICTION -->
+                    <input class="btn btn-dark btn-xl js-scroll-trigger" type="submit" value="Show me the money!"></input> <!-- CHANGE THIS TO FUNCTION CALL ON SALARY PREDICTION -->
+                </form>
+            </div>
         </div>
       </div>
     </div>
@@ -85,46 +145,35 @@
     <div class="container">
       <div class="content-section-heading">
         <h3 class="text-secondary mb-0">News and Analytics</h3>
-          <h2 class="mb-5">Company News:</h2>
+          <h2 class="mb-5">Stay informed during your job search</h2>
       </div>
       <div class="row">
-        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+        <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
           <span class="service-icon rounded-circle mx-auto mb-3">
             <i class="icon-screen-smartphone"></i>
           </span>
           <h4>
-            <strong>Responsive</strong>
+            <strong>Company News</strong>
           </h4>
-          <p class="text-faded mb-0">Looks great on any screen size!</p>
+          <p class="text-faded mb-0">View the latest headlines</p>
         </div>
-        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+        <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
           <span class="service-icon rounded-circle mx-auto mb-3">
             <i class="icon-pencil"></i>
           </span>
           <h4>
-            <strong>Redesigned</strong>
+            <strong>Analytics</strong>
           </h4>
-          <p class="text-faded mb-0">Freshly redesigned for Bootstrap 4.</p>
+          <p class="text-faded mb-0">Dashboard for in-depth visuals</p>
         </div>
-        <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+        <div class="col-lg-4 col-md-6 mb-5 mb-md-0">
           <span class="service-icon rounded-circle mx-auto mb-3">
             <i class="icon-like"></i>
           </span>
           <h4>
-            <strong>Favorited</strong>
+            <strong>Job Posting Updates</strong>
           </h4>
-          <p class="text-faded mb-0">Millions of users
-            <i class="fas fa-heart"></i>
-            Start Bootstrap!</p>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <span class="service-icon rounded-circle mx-auto mb-3">
-            <i class="icon-mustache"></i>
-          </span>
-          <h4>
-            <strong>Question</strong>
-          </h4>
-          <p class="text-faded mb-0">I mustache you a question...</p>
+          <p class="text-faded mb-0">Sign up for alerts on new postings!</p>
         </div>
       </div>
     </div>
@@ -201,8 +250,8 @@
   <section class="content-section bg-primary text-white" id="contact">
     <div class="container text-center">
       <h2 class="mb-4">Contact</h2>
-      <a href="#" class="btn btn-xl btn-light mr-4">Click Me!</a>
-      <a href="#" class="btn btn-xl btn-dark">Look at Me!</a>
+      <a href="#" class="btn btn-xl btn-light mr-4">Email Me!</a>
+      <a href="#" class="btn btn-xl btn-dark">Hire Me!</a>
     </div>
   </section>
 
@@ -253,7 +302,8 @@
   <script src="../static/vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for this template -->
-  <script src="../static/js/stylish-portfolio.min.js"></script>
+  <!-- <script src="../static/js/stylish-portfolio.min.js"></script> -->
+       <script src="../static/js/stylish-portfolio.js"></script>
 
 </body>
 

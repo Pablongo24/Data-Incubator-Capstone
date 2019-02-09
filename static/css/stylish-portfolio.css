@@ -45,6 +45,10 @@ h6 {
   color: rgba(255, 255, 255, 0.7);
 }
 
+.top-buffer {
+  margin-top: 30px;
+}
+
 /* Map */
 .map {
   height: 30rem;
@@ -55,6 +59,7 @@ h6 {
     height: 75%;
   }
 }
+
 
 .map iframe {
   pointer-events: none;
