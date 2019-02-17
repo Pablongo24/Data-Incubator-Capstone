@@ -57,6 +57,14 @@ def index():
     js_resources = INLINE.render_js()
     css_resources = INLINE.render_css()
 
+    if request.method == 'POST':
+        job_title = request.form.get('job_title')
+        city = request.form.get('location')
+        state = request.form.get('location')
+        employer = request.form.get('employer')
+
+        print(job_title, city, state, employer)
+
     # Render results if available:
     html = render_template('index.html',
                            js_resources=js_resources,

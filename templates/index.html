@@ -73,68 +73,85 @@
           <h2>Salary Prediction Tool</h2>
           <!--<p class="lead mb-5">This theme features a flexible, UX friendly sidebar menu and stock photos from our friends at
             <a href="https://unsplash.com/">Unsplash</a>!</p>-->
-            <p class="lead mb-5">Select Job Title, Location, and Company</p>
+            <p class="lead mb-5">Select Company, Location, and Job Title</p>
 
+            <form id="input" action="/" method="post">
             <div class="row">
-            <div class="col-lg-4 col-md-6 mb-5 mb-lg-0 form-group">
-                <div class="dropdown">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" id="dropMenu1" aria-haspopup="true" aria-expanded="true">
-                        Company<span class="caret"></span>
-                        </button>
-                    <div class="dropdown-menu" aria-labelledby="dropMenu1">
-                        {%  for company in companies %}
-                        <li><a class="dropdown-item">{{ company }}</a></li>
-                        {%  endfor %}
-                    <!--
-                        <a class="dropdown-item" href="#">Google</a>
-                        <a class="dropdown-item" href="#">Amazon</a>
-                        <a class="dropdown-item" href="#">Netflix</a> -->
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-lg-4 col-md-6 mb-5 mb-lg-0 form-group">
+                <div class="col-lg-4 col-md-6 mb-5 mb-lg-0 form-group">
+                    <select class="custom-select btn btn-primary dropdown-toggle" id="dropMenu1" aria-expanded="true" aria-haspopup="true" name="employer">
+                        <option selected>Company</option>
+                            {%  for company in companies %}
+                                <option>{{ company }}</option>
+                            {%  endfor %}
+                    </select>
+                </div>
+
+                <!--
+                <div class="col-lg-4 col-md-6 mb-5 mb-lg-0 form-group">
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" id="dropMenu1" aria-haspopup="true" aria-expanded="true">
+                            Company<span class="caret"></span>
+                            </button>
+                        <div class="dropdown-menu" aria-labelledby="dropMenu1">
+                            {%  for company in companies %}
+                            <li><a class="dropdown-item" name="employer">{{ company }}</a></li>
+                            {%  endfor %}
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="col-lg-4 col-md-6 mb-5 mb-lg-0 form-group">
+                    <select class="custom-select btn btn-primary dropdown-toggle" id="dropMenu2" aria-expanded="true" aria-haspopup="true" name="location">
+                        <option selected>Location</option>
+                            {%  for location in locations %}
+                                <option>{{ location }}</option>
+                            {%  endfor %}
+                    </select>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-5 mb-lg-0 form-group">
+                    <select class="custom-select btn btn-primary dropdown-toggle" id="dropMenu3" aria-expanded="true" aria-haspopup="true" name="job_title">
+                        <option selected>Job Title</option>
+                            {%  for title in job_titles %}
+                                <option>{{ title }}</option>
+                            {%  endfor %}
+                    </select>
+                </div>
+
+            <!--<div class="col-lg-4 col-md-6 mb-5 mb-lg-0 form-group">
                 <div class="dropdown">
                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" id="dropMenu2" aria-haspopup="true" aria-expanded="true">
                         Location<span class="caret"></span>
-                        </button>
+                         </button>
                     <div class="dropdown-menu" aria-labelledby="dropMenu2">
                         {%  for location in locations %}
                         <li><a class="dropdown-item">{{ location }}</a></li>
                         {% endfor %}
-                        <!--
-                        <a class="dropdown-item" href="#">New York City</a>
-                        <a class="dropdown-item" href="#">San Francisco</a>
-                        <a class="dropdown-item" href="#">Washington, D.C.</a> -->
                     </div>
                 </div>
             </div>
 
                 <div class="col-lg-4 col-md-6 mb-5 mb-lg-0 form-group">
-                <div class="dropdown">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" id="dropMenu3" aria-haspopup="true" aria-expanded="true">
-                        Job Title<span class="caret"></span>
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" id="dropMenu3" aria-haspopup="true" aria-expanded="true">
+                            Job Title<span class="caret"></span>
                         </button>
                     <ul class="dropdown-menu" aria-labelledby="dropMenu3">
                         {%  for title in job_titles %}
-                        <li><a class="dropdown-item">{{ title }}</a></li>
+                        <li><a class="dropdown-item" name="job_title">{{ title }}</a></li>
                         {% endfor %}
-                        <!--
-                        <a class="dropdown-item" href="#">Software Engineer</a>
-                        <a class="dropdown-item" href="#">Data Scientist</a>
-                        <a class="dropdown-item" href="#">Product Manager</a> -->
                     </ul>
-                </div>
-            </div>
+                    </div>
+                </div>-->
 
             </div>
             <p class="lead mb-5"></p>
             <div class="container">
-                <form id="input" action="/" method="post">
                     <!--<a class="btn btn-dark btn-xl js-scroll-trigger" href="#services">Show me the money!</a> --> <!-- CHANGE THIS TO FUNCTION CALL ON SALARY PREDICTION -->
-                    <input class="btn btn-dark btn-xl js-scroll-trigger" type="submit" value="Show me the money!"></input> <!-- CHANGE THIS TO FUNCTION CALL ON SALARY PREDICTION -->
-                </form>
+                    <input class="btn btn-dark btn-xl js-scroll-trigger" type="submit" value="Show me the money!"> <!-- CHANGE THIS TO FUNCTION CALL ON SALARY PREDICTION -->
             </div>
+            </form>
         </div>
       </div>
     </div>
