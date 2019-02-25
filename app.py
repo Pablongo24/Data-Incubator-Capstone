@@ -98,7 +98,7 @@ def index():
 
     # Render results if available:
     html = render_template('index.html',
-                           _anchor='salary-prediction',
+                           _anchor="news",
                            js_resources=js_resources,
                            css_resources=css_resources,
                            return_str=return_str,
