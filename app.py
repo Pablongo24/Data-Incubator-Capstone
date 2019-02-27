@@ -52,13 +52,13 @@ def encode_future_data(df, cols_to_transf):
 
 def process_request(predict_dict, cols_to_transf, future_data_column_order):
     predict_df = pd.DataFrame.from_dict(predict_dict)
-    predict_df_transf = predict_df[cols_to_transf]
-    predict_df_non_transf = predict_df.drop(cols_to_transf, axis=1)
+    #predict_df_transf = predict_df[cols_to_transf]
+    #predict_df_non_transf = predict_df.drop(cols_to_transf, axis=1)
 
-    for cols in predict_df_transf.columns:
-        predict_df_transf[col] = predict_df_transf[cols].str.upper()
+    #for cols in predict_df_transf.columns:
+    #    predict_df_transf[col] = predict_df_transf[cols].str.upper()
 
-    predict_df = pd.concat([predict_df_transf, predict_df_non_transf], axis=1, join='outer')
+    #predict_df = pd.concat([predict_df_transf, predict_df_non_transf], axis=1, join='outer')
 
     predict_df = encode_future_data(predict_df, cols_to_transf)
 
